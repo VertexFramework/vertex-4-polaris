@@ -13,7 +13,7 @@
 
 ## How to report vulnerability
 
-If you find a potential vulnerability in Lena, please inform us of [robotsvision.vx@gmail.com]. I call for confidentiality until a correction is developed.
+If you find a potential vulnerability in Vertex, please inform us of [robotsvision.vx@gmail.com]. I call for confidentiality until a correction is developed.
 
 ## Consideration of messages
 
