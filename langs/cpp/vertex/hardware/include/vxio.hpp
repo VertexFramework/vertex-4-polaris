@@ -54,21 +54,21 @@ public:
      * @param[in] n GPIO number.
      * @param[in] mode GPIO mode.
     */
-    static void mode(pin::num n, pin::mode mode);
+    static void mode(const pin::num n, pin::mode mode);
     /** 
      * @brief Writes ditial value for specific port.
      * 
      * @param[in] n GPIO number.
      * @param[in] mode GPIO mode.
     */
-    static void write(pin::num n, pin::state state);
+    static void write(const pin::num n, pin::state state);
     /** 
      * @brief Writes analog value for specific port.
      * 
      * @param[in] n GPIO number.
      * @param[in] mode GPIO mode.
     */
-    static void write(pin::num n, pin::analog value);
+    static void write(const pin::num n, pin::analog value);
     
     /** 
      * @brief Reads digital/analog value for specific port.
@@ -77,7 +77,7 @@ public:
      * @return value in pin::state or pin::analog type.
     */
     template<typename T>
-    static T read(pin::num n);
+    static T read(const pin::num n);
 
 
     /** 
@@ -85,7 +85,7 @@ public:
      * 
      * @param[in] n GPIO number.
     */
-    static void toggle(pin::num n);
+    static void toggle(const pin::num n);
 };
 
 /** 

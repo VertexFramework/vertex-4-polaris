@@ -16,7 +16,7 @@ OBJCOPY = avr-objcopy
 OBJDUMP = avr-objdump # Добавлено
 CFLAGS = -std=c++14 -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(INC_PATH) -I$(VERTEX_PATH)\
 -flto -O3 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall
-LDFLAGS = -flto -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -Wl,-Map=$(BIN_PATH)/$(TARGET).map
+LDFLAGS =  -flto -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -Wl,-Map=$(BIN_PATH)/$(TARGET).map
 OBJCOPY_FLAGS = -O ihex
 OBJDUMP_FLAGS = -h -S # Добавлено
 
