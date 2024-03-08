@@ -3,8 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "C:\\Projects\\vertex-4-polaris\\langs\\cpp\\vertex\\std\\include\\"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -12,12 +11,12 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.22621.0",
-            "compilerPath": "C:\\Program Files (x86)\\Atmel\\Studio\\7.0\\toolchain\\avr8\\avr8-gnu-toolchain\\bin\\avr-g++.exe",
+            "compilerPath": "C:\\\\Program Files (x86)\\\\Atmel\\\\Studio\\\\7.0\\\\toolchain\\\\avr8\\\\avr8-gnu-toolchain\\\\bin\\\\avr-g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x86",
+            "intelliSenseMode": "windows-gcc-x86",
             "compilerArgs": [
-                "-mmcu=atmega328p"
+                "-std=c++14"
             ]
         }
     ],

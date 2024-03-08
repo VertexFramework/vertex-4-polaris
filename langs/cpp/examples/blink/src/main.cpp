@@ -1,15 +1,16 @@
 #include <vertex.hpp>
+using namespace vx;
 
 class blink : public vertex <blink> {
 public:
-    void setup() {
-        // Инициализация
+    void setup(void) {
+        gpio::mode(13, pin::mode::OUTPUT);
     }
+    void loop(void) {
 
-    void loop() {
-        // Основной цикл
     }
 };
+
 
 
 VERTEX_START(blink);

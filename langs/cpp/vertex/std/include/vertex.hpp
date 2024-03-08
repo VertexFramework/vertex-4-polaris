@@ -36,6 +36,7 @@
 #include "vxstd.hpp"
 
 /* Include Standard Hardware libraries */
+#include "../../hardware/include/hardware.hpp"
 
 template <typename app>
 class vertex {
@@ -49,8 +50,8 @@ public:
 };
 
 #define VERTEX_START(APP_CLASS); \
+VX_API_FUNC APP_CLASS app;\
 int main(void) { \
-    APP_CLASS app;\
     app.run();\
     return 0; \
 }

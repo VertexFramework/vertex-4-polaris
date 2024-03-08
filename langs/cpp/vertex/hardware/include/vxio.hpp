@@ -14,31 +14,97 @@
 */
 namespace vx {
 
+namespace pin {
+
+/** 
+ * @brief Pin mode. Standard Vertex type.
+*/
+enum class mode {
+    INPUT, OUTPUT,
+    ANALOG_INPUT, ANALOG_OUTPUT,
+};
+
+/** 
+ * @brief Pin state. Standard Vertex type.
+*/
+enum class state : bool {
+    LOW = false, HIGH = true
+};
+
+/** 
+ * @brief Pin number. Standard Vertex type.
+*/
+using num = uint16;
+
+/** 
+ * @brief Pin number. Standard Vertex type.
+*/
+using analog = float;
+
+}
+
 /** 
  * @brief Standard Vertex Hardware class for delay.
 */
 class gpio {
 public:
     /** 
-     * @brief Makes a delay for a certain number of seconds.
+     * @brief Sets mode for specific port.
      * 
-     * @param[in] time number of seconds.
+     * @param[in] n GPIO number.
+     * @param[in] mode GPIO mode.
     */
-    void mode();
+    static void mode(pin::num n, pin::mode mode);
     /** 
-     * @brief Makes a delay for a certain number of milliseconds.
+     * @brief Writes ditial value for specific port.
      * 
-     * @param[in] time number of milliseconds.
+     * @param[in] n GPIO number.
+     * @param[in] mode GPIO mode.
     */
-    void ms(double time);
+    static void write(pin::num n, pin::state state);
     /** 
-     * @brief Makes a delay for a certain number of nanoseconds.
+     * @brief Writes analog value for specific port.
      * 
-     * @param[in] time number of nanoseconds.
+     * @param[in] n GPIO number.
+     * @param[in] mode GPIO mode.
     */
-    void us(double time);
+    static void write(pin::num n, pin::analog value);
+    
+    /** 
+     * @brief Reads digital/analog value for specific port.
+     * 
+     * @param[in] n GPIO number.
+     * @return value in pin::state or pin::analog type.
+    */
+    template<typename T>
+    static T read(pin::num n);
+
+
+    /** 
+     * @brief Toggles/inverts digital value on the specific port.
+     * 
+     * @param[in] n GPIO number.
+    */
+    static void toggle(pin::num n);
 };
 
+/** 
+ * @brief Reads digital value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @return value in pin::state
+*/
+template<>
+pin::state gpio::read<pin::state>(pin::num n);
+
+/** 
+ * @brief Reads analog value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @return value in pin::analog type.
+*/
+template<>
+pin::analog gpio::read<pin::analog>(pin::num n);
 
 }
 
