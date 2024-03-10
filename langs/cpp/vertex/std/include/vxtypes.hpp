@@ -16,6 +16,8 @@ namespace vx {
 
 /* Declarate types */
 
+/* General data */
+
 typedef signed char         int8;
 typedef unsigned char       uint8;
 typedef signed short        int16;
@@ -24,6 +26,12 @@ typedef signed int          int32;
 typedef unsigned int        uint32;
 typedef signed long long    int64;
 typedef unsigned long long  uint64;
+
+/* String */
+
+typedef uint8   uchar8;
+typedef uint16  uchar16;
+typedef uint32  uchar32;
 
 }
 
