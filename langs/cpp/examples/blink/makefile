@@ -1,7 +1,7 @@
 # Configuration
 MCU = atmega328p
 F_CPU = 16000000UL
-VERTEX_PATH = C:/Projects/vertex-4-polaris/langs/cpp/vertex/std/include
+VERTEX_PATH = /home/robotsvision/projects/vertex-4-polaris/langs/cpp/vertex/std/include/
 TARGET = app
 
 # Директории
@@ -46,7 +46,6 @@ $(OBJ_PATH)/$(TARGET).elf: $(OBJECTS)
 
 # Сборка объектных файлов
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp
-	@if not exist "$(OBJ_PATH)" mkdir $(OBJ_PATH)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Очистка проекта

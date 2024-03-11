@@ -9,15 +9,24 @@
  * @author   Matvey Rybalkin
  ******************************************************************************/
 
+/* Include Standard Vertex library */
+#include <vertex.hpp>
+
+/* Include Standard Hardware libraries */
+#include "hardware.hpp"
+
 /** 
  * @brief Standard Vertex namespace.
 */
 namespace vx {
 
-namespace pin {
+/** 
+ * @brief Standard Vertex Hardware namespace for GPIO.
+*/
+namespace gpio {
 
 /** 
- * @brief Pin mode. Standard Vertex type.
+ * @brief GPIO mode. Standard Vertex type.
 */
 enum class mode {
     INPUT, OUTPUT,
@@ -32,61 +41,46 @@ enum class state : bool {
 };
 
 /** 
- * @brief Pin number. Standard Vertex type.
+ * @brief Pin number. Standard Vertex GPIO type.
 */
 using num = uint16;
 
 /** 
- * @brief Pin number. Standard Vertex type.
+ * @brief Analog value. (0 ~ 1). Standard Vertex GPIO type.
 */
 using analog = float;
 
-}
+/** 
+ * @brief Sets mode for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @param[in] mode GPIO mode.
+*/
+void init(const num n, mode mode);
 
 /** 
- * @brief Standard Vertex Hardware class for delay.
+ * @brief Writes ditial value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @param[in] mode GPIO mode.
 */
-class gpio {
-public:
-    /** 
-     * @brief Sets mode for specific port.
-     * 
-     * @param[in] n GPIO number.
-     * @param[in] mode GPIO mode.
-    */
-    static void mode(const pin::num n, pin::mode mode);
-    /** 
-     * @brief Writes ditial value for specific port.
-     * 
-     * @param[in] n GPIO number.
-     * @param[in] mode GPIO mode.
-    */
-    static void write(const pin::num n, pin::state state);
-    /** 
-     * @brief Writes analog value for specific port.
-     * 
-     * @param[in] n GPIO number.
-     * @param[in] mode GPIO mode.
-    */
-    static void write(const pin::num n, pin::analog value);
-    
-    /** 
-     * @brief Reads digital/analog value for specific port.
-     * 
-     * @param[in] n GPIO number.
-     * @return value in pin::state or pin::analog type.
-    */
-    template<typename T>
-    static T read(const pin::num n);
+void write(const num n, state state);
+/** 
+ * @brief Writes analog value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @param[in] mode GPIO mode.
+*/
+void write(const num n, analog value);
 
-
-    /** 
-     * @brief Toggles/inverts digital value on the specific port.
-     * 
-     * @param[in] n GPIO number.
-    */
-    static void toggle(const pin::num n);
-};
+/** 
+ * @brief Reads digital/analog value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @return value in gpio::state or gpio::analog type.
+*/
+template<typename T>
+T read(const num n);
 
 /** 
  * @brief Reads digital value for specific port.
@@ -95,7 +89,7 @@ public:
  * @return value in pin::state
 */
 template<>
-pin::state gpio::read<pin::state>(pin::num n);
+state read<state>(num n);
 
 /** 
  * @brief Reads analog value for specific port.
@@ -104,8 +98,16 @@ pin::state gpio::read<pin::state>(pin::num n);
  * @return value in pin::analog type.
 */
 template<>
-pin::analog gpio::read<pin::analog>(pin::num n);
+analog read<analog>(num n);
 
+/** 
+ * @brief Toggles/inverts digital value on the specific port.
+ * 
+ * @param[in] n GPIO number.
+*/
+void toggle(const num n);
+
+}
 }
 
 #endif // VERTEX_4_POLARIS_HARDWARE_IO_HPP__

@@ -9,6 +9,12 @@
  * @author   Matvey Rybalkin
  ******************************************************************************/
 
+/* Include Standard Vertex library */
+#include <vertex.hpp>
+
+/* Include Standard Hardware libraries */
+#include "hardware.hpp"
+
 /** 
  * @brief Standard Vertex namespace.
 */

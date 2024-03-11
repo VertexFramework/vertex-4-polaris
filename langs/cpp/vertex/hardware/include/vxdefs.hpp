@@ -9,6 +9,12 @@
  * @author   Matvey Rybalkin
  ******************************************************************************/
 
+/* Include Standard Vertex library */
+#include <vertex.hpp>
+
+/* Include Standard Hardware libraries */
+#include "hardware.hpp"
+
 /* Definitions */
 #define VX_API_DATA __attribute__((unused))
 #define VX_API_FUNC __attribute__((unused))
