@@ -26,7 +26,7 @@ namespace vx {
 namespace gpio {
 
 /** 
- * @brief GPIO mode. Standard Vertex type.
+ * @brief GPIO mode. Standard Vertex GPIO type.
 */
 enum class mode {
     INPUT, OUTPUT,
@@ -34,7 +34,7 @@ enum class mode {
 };
 
 /** 
- * @brief Pin state. Standard Vertex type.
+ * @brief Pin state. Standard Vertex GPIO type.
 */
 enum class state : bool {
     LOW = false, HIGH = true

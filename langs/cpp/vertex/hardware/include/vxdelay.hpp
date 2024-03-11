@@ -21,29 +21,30 @@
 namespace vx {
 
 /** 
- * @brief Standard Vertex Hardware class for delay.
+ * @brief Standard Vertex Hardware namespace delay.
 */
-class delay {
-public:
-    /** 
-     * @brief Makes a delay for a certain number of seconds.
-     * 
-     * @param[in] time number of seconds.
-    */
-    static void s(double time);
-    /** 
-     * @brief Makes a delay for a certain number of milliseconds.
-     * 
-     * @param[in] time number of milliseconds.
-    */
-    static void ms(double time);
-    /** 
-     * @brief Makes a delay for a certain number of nanoseconds.
-     * 
-     * @param[in] time number of nanoseconds.
-    */
-    static void us(double time);
-};
+namespace delay {
+
+/** 
+ * @brief Makes a delay for a certain number of seconds.
+ * 
+ * @param[in] time number of seconds.
+*/
+static void s(double time);
+/** 
+ * @brief Makes a delay for a certain number of milliseconds.
+ * 
+ * @param[in] time number of milliseconds.
+*/
+static void ms(double time);
+/** 
+ * @brief Makes a delay for a certain number of nanoseconds.
+ * 
+ * @param[in] time number of nanoseconds.
+*/
+static void us(double time);
+
+}
 
 
 }
