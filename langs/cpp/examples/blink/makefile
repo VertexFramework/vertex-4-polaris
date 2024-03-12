@@ -2,6 +2,7 @@
 MCU = atmega328p
 F_CPU = 16000000UL
 VERTEX_PATH = /home/robotsvision/projects/vertex-4-polaris/langs/cpp/vertex/std/include/
+POLARIS_PATH = /home/robotsvision/projects/vertex-4-polaris/langs/cpp/polaris/include/
 TARGET = app
 
 # Директории
@@ -14,7 +15,7 @@ INC_PATH = include
 CC = avr-g++
 OBJCOPY = avr-objcopy
 OBJDUMP = avr-objdump # Добавлено
-CFLAGS = -std=c++14 -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(INC_PATH) -I$(VERTEX_PATH)\
+CFLAGS = -std=c++14 -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(INC_PATH) -I$(POLARIS_PATH) -I$(VERTEX_PATH)\
 -flto -O3 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall
 LDFLAGS =  -flto -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -Wl,-Map=$(BIN_PATH)/$(TARGET).map
 OBJCOPY_FLAGS = -O ihex

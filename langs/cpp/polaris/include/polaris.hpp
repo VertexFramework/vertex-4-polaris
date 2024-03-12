@@ -1,11 +1,11 @@
-#ifndef VERTEX_4_POLARIS_HPP__
-#define VERTEX_4_POLARIS_HPP__
+#ifndef VERTEX_4_POLARIS_LIB_HPP__
+#define VERTEX_4_POLARIS_LIB_HPP__
 
 /**************************************************************************//**
- * @file     polaris.hpp
+ * @file     vertex.hpp
  * @brief    Vertex 4 Polaris. Main header file.
  * @version  V4.0.0
- * @date     5. Mar 2024
+ * @date     12. Mar 2024
  * @author   Matvey Rybalkin
  ******************************************************************************/
 
@@ -32,32 +32,11 @@
 /* Check C++ standard */
 #if __cplusplus >= 201402L
 
-/* Include Standard Vertex libraries */
-#include "vxstd.hpp"
-
-/* Include Standard Hardware libraries */
-#include "../../hardware/include/hardware.hpp"
-
-template <typename vertex_body>
-class vertex {
-public:
-    void run() {
-        static_cast <vertex_body*> (this)->setup();
-        while (true) {
-            static_cast <vertex_body*> (this)->loop();
-        }
-    }
-};
-
-#define VERTEX_START(APP_CLASS); \
-VX_API_FUNC APP_CLASS app;\
-int main(void) { \
-    app.run();\
-    return 0; \
-}
+/* Include Polaris standard ML libraries */
+#include "ML/ps_ml1.hpp"
 
 #else
 #error "[Vertex 4 Polaris]: Requires at least version C++ 2014 (__cplusplus >= 201402L)"
 #endif
 
-#endif // VERTEX_4_POLARIS_HPP__
+#endif // VERTEX_4_POLARIS_LIB_HPP__

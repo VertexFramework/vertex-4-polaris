@@ -13,7 +13,7 @@
 #include <vertex.hpp>
 
 /* Include Standard Hardware libraries */
-#include "hardware.hpp"
+#include "../../include/hardware.hpp"
 
 /* Definitions */
 #define VX_API_DATA __attribute__((unused))

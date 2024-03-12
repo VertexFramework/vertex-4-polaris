@@ -1,4 +1,5 @@
 #include <vertex.hpp>
+#include <polaris.hpp>
 using namespace vx;
 
 class blink : public vertex <blink> {

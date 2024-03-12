@@ -8,9 +8,9 @@ Discarded input sections
  .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avr5/crtatmega328p.o
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avr5/crtatmega328p.o
  .text          0x0000000000000000        0x0 obj/delay.o (symbol from plugin)
- .text          0x0000000000000000        0x0 /tmp/ccYtCyGF.ltrans0.ltrans.o
- .data          0x0000000000000000        0x0 /tmp/ccYtCyGF.ltrans0.ltrans.o
- .bss           0x0000000000000000        0x0 /tmp/ccYtCyGF.ltrans0.ltrans.o
+ .text          0x0000000000000000        0x0 /tmp/ccgWvxPr.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 /tmp/ccgWvxPr.ltrans0.ltrans.o
+ .bss           0x0000000000000000        0x0 /tmp/ccgWvxPr.ltrans0.ltrans.o
  .text          0x0000000000000000        0x0 obj/io.o (symbol from plugin)
  .text          0x0000000000000000        0x0 obj/main.o (symbol from plugin)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
@@ -50,7 +50,7 @@ START GROUP
 LOAD /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avr5/libm.a
 END GROUP
 LOAD obj/delay.o
-LOAD /tmp/ccYtCyGF.ltrans0.ltrans.o
+LOAD /tmp/ccgWvxPr.ltrans0.ltrans.o
 LOAD obj/io.o
 LOAD obj/main.o
 LOAD /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a
@@ -245,7 +245,7 @@ END GROUP
                 0x000000000000007a                . = ALIGN (0x2)
  *(.text.*)
  .text.startup.main
-                0x000000000000007a       0x10 /tmp/ccYtCyGF.ltrans0.ltrans.o
+                0x000000000000007a       0x10 /tmp/ccgWvxPr.ltrans0.ltrans.o
                 0x000000000000007a                main
                 0x000000000000008a                . = ALIGN (0x2)
  *(.fini9)
@@ -323,11 +323,11 @@ END GROUP
 
 .stab           0x0000000000000000      0x108
  *(.stab)
- .stab          0x0000000000000000      0x108 /tmp/ccYtCyGF.ltrans0.ltrans.o
+ .stab          0x0000000000000000      0x108 /tmp/ccgWvxPr.ltrans0.ltrans.o
 
 .stabstr        0x0000000000000000      0x18c
  *(.stabstr)
- .stabstr       0x0000000000000000      0x18c /tmp/ccYtCyGF.ltrans0.ltrans.o
+ .stabstr       0x0000000000000000      0x18c /tmp/ccgWvxPr.ltrans0.ltrans.o
 
 .stab.excl
  *(.stab.excl)
@@ -343,7 +343,7 @@ END GROUP
 
 .comment        0x0000000000000000       0x11
  *(.comment)
- .comment       0x0000000000000000       0x11 /tmp/ccYtCyGF.ltrans0.ltrans.o
+ .comment       0x0000000000000000       0x11 /tmp/ccgWvxPr.ltrans0.ltrans.o
                                          0x12 (size before relaxing)
 
 .note.gnu.avr.deviceinfo

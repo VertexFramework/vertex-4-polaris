@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Projects/vertex-4-polaris/langs/cpp/vertex/std/include"
+                "/home/robotsvision/projects/vertex-4-polaris/langs/cpp/polaris/include/",
+                "/home/robotsvision/projects/vertex-4-polaris/langs/cpp/vertex/std/include/"
             ],
             "defines": [
                 "_DEBUG",

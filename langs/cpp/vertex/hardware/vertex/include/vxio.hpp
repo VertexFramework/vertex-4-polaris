@@ -13,7 +13,7 @@
 #include <vertex.hpp>
 
 /* Include Standard Hardware libraries */
-#include "hardware.hpp"
+#include "../../include/hardware.hpp"
 
 /** 
  * @brief Standard Vertex namespace.
