@@ -51,12 +51,19 @@ using num = uint16;
 using analog = float;
 
 /** 
- * @brief Sets mode for specific port.
+ * @brief Inits mode for specific port.
  * 
  * @param[in] n GPIO number.
  * @param[in] mode GPIO mode.
 */
 void init(const num n, mode mode);
+
+/** 
+ * @brief Deinitialize specific port.
+ * 
+ * @param[in] n GPIO number.
+*/
+void deinit(const num n);
 
 /** 
  * @brief Writes ditial value for specific port.

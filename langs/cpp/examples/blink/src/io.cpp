@@ -44,6 +44,14 @@ void __attribute__((always_inline)) vx::gpio::init(const gpio::num n, gpio::mode
     (*native::atmega328p_ddr(n)) |= (1 << atmega328p_n[n]);
 }
 
+void __attribute__((always_inline)) vx::gpio::deinit(const gpio::num n) {
+    if (!native::assert_param(n)) {
+        return;
+    }
+    (*native::atmega328p_ddr(n)) &= ~(1 << atmega328p_n[n]);
+    (*native::atmega328p_port(n)) &= ~(1 << atmega328p_n[n]);
+}
+
 void VX_API_FUNC vx::gpio::write(const gpio::num n, gpio::state state) {
     if (native::assert_param(n)) {
         return;

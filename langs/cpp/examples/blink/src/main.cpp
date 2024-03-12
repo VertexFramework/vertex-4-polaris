@@ -9,6 +9,8 @@ public:
         vx::gpio::init(3, vx::gpio::mode::OUTPUT);
         vx::gpio::init(4, vx::gpio::mode::OUTPUT);
         vx::gpio::init(5, vx::gpio::mode::OUTPUT);
+
+        vx::gpio::deinit(4);
     }
     void loop(void) {
     }

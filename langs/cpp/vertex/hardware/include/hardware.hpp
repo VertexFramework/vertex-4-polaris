@@ -10,8 +10,13 @@
  ******************************************************************************/
 
 /* Include Hardware Vertex libraries */
+
+/* Basics */
 #include "vxdefs.hpp"
 #include "vxdelay.hpp"
 #include "vxio.hpp"
+
+/* Interfaces */
+#include "interfaces/vxi2c.hpp"
 
 #endif // VERTEX_4_POLARIS_HARDWARE_HPP__
