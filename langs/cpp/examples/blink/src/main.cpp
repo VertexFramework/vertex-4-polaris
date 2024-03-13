@@ -5,13 +5,11 @@ using namespace vx;
 class blink : public vertex <blink> {
 public:
     void setup(void) {
-        gpio::multiple::init_config led[] = {
-            {13, gpio::mode::OUTPUT},
-            {11, gpio::mode::OUTPUT},
-        };
-        gpio::multiple::init(1, led);
+        gpio::init(13, gpio::mode::OUTPUT);
     }
     void loop(void) {
+        //gpio::toggle(13);
+        //delay::s(0.25);
     }
 };
 

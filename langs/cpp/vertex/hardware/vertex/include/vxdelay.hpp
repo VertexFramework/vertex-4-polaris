@@ -30,19 +30,21 @@ namespace delay {
  * 
  * @param[in] time number of seconds.
 */
-static void s(double time);
+void s(double time);
+
 /** 
  * @brief Makes a delay for a certain number of milliseconds.
  * 
  * @param[in] time number of milliseconds.
 */
-static void ms(double time);
+void ms(double time);
+
 /** 
  * @brief Makes a delay for a certain number of nanoseconds.
  * 
  * @param[in] time number of nanoseconds.
 */
-static void us(double time);
+void us(double time);
 
 }
 

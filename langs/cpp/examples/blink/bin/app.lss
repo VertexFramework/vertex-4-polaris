@@ -3,25 +3,25 @@ obj/app.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000000d4  2**0
+  0 .data         00000000  00800100  00800100  000000d6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000080  00000000  00000000  00000054  2**1
+  1 .text         00000082  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .stab         00000084  00000000  00000000  000000d4  2**2
+  2 .stab         000000f0  00000000  00000000  000000d8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  3 .stabstr      000000aa  00000000  00000000  00000158  2**0
+  3 .stabstr      0000018c  00000000  00000000  000001c8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .comment      00000011  00000000  00000000  00000202  2**0
+  4 .comment      00000011  00000000  00000000  00000354  2**0
                   CONTENTS, READONLY
-  5 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000214  2**2
+  5 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000368  2**2
                   CONTENTS, READONLY
-  6 .debug_info   000005f4  00000000  00000000  00000254  2**0
+  6 .debug_info   000005f4  00000000  00000000  000003a8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000005a2  00000000  00000000  00000848  2**0
+  7 .debug_abbrev 000005a2  00000000  00000000  0000099c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000001a  00000000  00000000  00000dea  2**0
+  8 .debug_line   0000001a  00000000  00000000  00000f3e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000208  00000000  00000000  00000e04  2**0
+  9 .debug_str    00000208  00000000  00000000  00000f58  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -88,22 +88,23 @@ Disassembly of section .text:
   70:	de bf       	out	0x3e, r29	; 62
   72:	cd bf       	out	0x3d, r28	; 61
   74:	02 d0       	rcall	.+4      	; 0x7a <main>
-  76:	02 c0       	rjmp	.+4      	; 0x7c <_exit>
+  76:	03 c0       	rjmp	.+6      	; 0x7e <_exit>
 
 00000078 <__bad_interrupt>:
   78:	c3 cf       	rjmp	.-122    	; 0x0 <__vectors>
 
 0000007a <main>:
+
+void VX_ALWAYS_INLINE vx::gpio::init(const gpio::num n, gpio::mode mode) {
+    if (!native::assert_param(n)) {
+        return;
     }
-    void loop(void) {
-    }
-};
+    (*native::atmega328p_ddr(n)) |= (1 << native::atmega328p_n[n]);
+  7a:	25 9a       	sbi	0x04, 5	; 4
+  7c:	ff cf       	rjmp	.-2      	; 0x7c <main+0x2>
 
-VERTEX_START(blink);
-  7a:	ff cf       	rjmp	.-2      	; 0x7a <main>
+0000007e <_exit>:
+  7e:	f8 94       	cli
 
-0000007c <_exit>:
-  7c:	f8 94       	cli
-
-0000007e <__stop_program>:
-  7e:	ff cf       	rjmp	.-2      	; 0x7e <__stop_program>
+00000080 <__stop_program>:
+  80:	ff cf       	rjmp	.-2      	; 0x80 <__stop_program>
