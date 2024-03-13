@@ -50,7 +50,7 @@ public:
 };
 
 #define VERTEX_START(APP_CLASS); \
-VX_API_FUNC APP_CLASS app;\
+VX_UNUSED APP_CLASS app;\
 int main(void) { \
     app.run();\
     return 0; \

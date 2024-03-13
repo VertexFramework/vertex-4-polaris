@@ -16,7 +16,7 @@
 #include "../../include/hardware.hpp"
 
 /* Definitions */
-#define VX_API_DATA __attribute__((unused))
-#define VX_API_FUNC __attribute__((unused))
+#define VX_UNUSED           __attribute__((unused))
+#define VX_ALWAYS_INLINE    __attribute__((always_inline))
 
 #endif // VERTEX_4_POLARIS_HARDWARE_DEFS_HPP__

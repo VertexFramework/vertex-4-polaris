@@ -58,6 +58,7 @@ using analog = float;
 */
 void init(const num n, mode mode);
 
+
 /** 
  * @brief Deinitialize specific port.
  * 
@@ -114,7 +115,68 @@ analog read<analog>(num n);
 */
 void toggle(const num n);
 
+/** 
+ * @brief Multiple functions. To interact with GPIO with structures and arrays.
+*/
+namespace multiple {
+
+/** 
+ * @brief Multiple functions structure for init() function
+*/
+typedef struct {
+    gpio::num num;
+    gpio::mode mode;
+} init_config;
+
+/** 
+ * @brief Multiple functions structure for write() function
+*/
+typedef struct {
+    gpio::num num;
+    union {
+        gpio::state state;
+        gpio::analog analog;
+    };
+} write_config;
+
+/** 
+ * @brief Multiple functions structure for read() function
+*/
+typedef struct {
+    gpio::num num;
+    union {
+        gpio::state* state;
+        gpio::analog* analog;
+    };
+} read_config;
+
+/** 
+ * @brief Inits mode for specific port.
+ * 
+ * @param[in] n number of GPIO pins
+ * @param[in] conf array of GPIO configurations
+*/
+void init(uint16 n, init_config conf[]);
+
+/** 
+ * @brief Writes values for specific ports.
+ * 
+ * @param[in] n number of GPIO pins
+ * @param[in] conf array of GPIO configurations
+*/
+void write(uint16 n, write_config conf[]);
+
+/** 
+ * @brief Reads values from specific ports.
+ * 
+ * @param[in] n number of GPIO pins
+ * @param[in] conf array of GPIO configurations
+*/
+void read(uint16 n, read_config conf[]);
+
 }
+}
+
 }
 
 #endif // VERTEX_4_POLARIS_HARDWARE_IO_HPP__

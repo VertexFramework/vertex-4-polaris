@@ -1,5 +1,5 @@
-#ifndef VERTEX_4_POLARIS_FLEX_HARDWARE_IO_HPP__
-#define VERTEX_4_POLARIS_FLEX_HARDWARE_IO_HPP__
+#ifndef VERTEX_4_POLARIS_FLEX_HARDWARE_DEFS_HPP__
+#define VERTEX_4_POLARIS_FLEX_HARDWARE_DEFS_HPP__
 
 /**************************************************************************//**
  * @file     hardware.hpp
