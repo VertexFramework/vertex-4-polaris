@@ -1,17 +1,15 @@
 #include <vertex.hpp>
 #include <polaris.hpp>
-using namespace vx;
+using namespace fx;
 
 class blink : public vertex <blink> {
 public:
     void setup(void) {
-        gpio::init(5, gpio::mode::OUTPUT);
+        fx::gpio::init(13, gpio::mode::AF_OPEN_DRAIN);
     }
     void loop(void) {
-        //gpio::toggle(13);
-        //delay::s(0.25);
+
     }
 };
  
-
 VERTEX_START(blink);

@@ -70,14 +70,15 @@ void deinit(const num n);
  * @brief Writes ditial value for specific port.
  * 
  * @param[in] n GPIO number.
- * @param[in] mode GPIO mode.
+ * @param[in] state GPIO state.
 */
 void write(const num n, state state);
+
 /** 
  * @brief Writes analog value for specific port.
  * 
  * @param[in] n GPIO number.
- * @param[in] mode GPIO mode.
+ * @param[in] value GPIO value. (0 ~ 1)
 */
 void write(const num n, analog value);
 

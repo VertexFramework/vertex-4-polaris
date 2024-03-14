@@ -1,6 +1,28 @@
 {
     "configurations": [
         {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/robotsvision/projects/vertex-4-polaris/langs/cpp/polaris/include/",
+                "/home/robotsvision/projects/vertex-4-polaris/langs/cpp/vertex/std/include/"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "/usr/bin/avr-g++",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-x86",
+            "compilerArgs": [
+                "-mmcu=atmega328p"
+            ],
+            "configurationProvider": "ms-vscode.makefile-tools"
+        },
+        {
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**"
@@ -12,8 +34,8 @@
             ],
             "windowsSdkVersion": "10.0.22621.0",
             "compilerPath": "/bin/avr-g++",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
+            "cStandard": "c14",
+            "cppStandard": "c++14",
             "intelliSenseMode": "windows-gcc-x86",
             "compilerArgs": [
                 "-std=c++14"

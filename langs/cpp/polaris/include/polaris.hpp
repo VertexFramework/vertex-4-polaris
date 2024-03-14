@@ -2,7 +2,7 @@
 #define VERTEX_4_POLARIS_LIB_HPP__
 
 /**************************************************************************//**
- * @file     vertex.hpp
+ * @file     polaris.hpp
  * @brief    Vertex 4 Polaris. Main header file.
  * @version  V4.0.0
  * @date     12. Mar 2024

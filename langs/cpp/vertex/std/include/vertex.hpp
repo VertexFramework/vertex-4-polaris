@@ -2,7 +2,7 @@
 #define VERTEX_4_POLARIS_HPP__
 
 /**************************************************************************//**
- * @file     polaris.hpp
+ * @file     vertex.hpp
  * @brief    Vertex 4 Polaris. Main header file.
  * @version  V4.0.0
  * @date     5. Mar 2024
@@ -50,7 +50,7 @@ public:
 };
 
 #define VERTEX_START(APP_CLASS); \
-VX_UNUSED APP_CLASS app;\
+APP_CLASS app;\
 int main(void) { \
     app.run();\
     return 0; \

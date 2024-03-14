@@ -29,15 +29,11 @@ namespace gpio {
  * @brief GPIO mode. Standard Flex GPIO type.
 */
 enum class mode {
-    LOCKED,
-    INPUT_OPEN_DRAIN,
-    INPUT_PULL_UP,
-    INPUT_PULL_DOWN,
-    INPUT_ADC,
-    OUTPUT,
-    OUTPUT_PWM,
-    OUTPUT_DAC,
-    RESERVED
+    INPUT_FLOATING, INPUT_PULL_DOWN, INPUT_PULL_UP,
+    OUTPUT_OPEN_DRAIN, OUTPUT_PULL_DOWN, OUTPUT_PULL_UP,
+    OUTPUT_PUSH_PULL,
+    ANALOG,
+    AF_OPEN_DRAIN, AF_PUSH_PULL
 };
 
 /** 
@@ -52,8 +48,43 @@ enum class state : bool {
 */
 using num = vx::uint16;
 
+/** 
+ * @brief Inits mode for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @param[in] mode GPIO mode.
+*/
+void init(const num n, mode mode);
 
+/** 
+ * @brief Deinitialize specific port.
+ * 
+ * @param[in] n GPIO number.
+*/
+void deinit(const num n);
 
+/** 
+ * @brief Writes ditial value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @param[in] mode GPIO mode.
+*/
+void write(const num n, state state);
+
+/** 
+ * @brief Reads digital value for specific port.
+ * 
+ * @param[in] n GPIO number.
+ * @return value in state
+*/
+state read(num n);
+
+/** 
+ * @brief Toggles/inverts digital value on the specific port.
+ * 
+ * @param[in] n GPIO number.
+*/
+void toggle(const num n);
 
 }
 
