@@ -14,7 +14,7 @@ function createObjectPaths(files) {
             return null;
         }
         const relativePath = file.slice(basePathIndex + basePathSequence.length + 1);
-        const newObjPath = relativePath.replace(/\.hpp$/, '.o'); // Убедитесь, что здесь указано правильное расширение
+        const newObjPath = relativePath.replace(/\.cpp$/, '.o'); // Убедитесь, что здесь указано правильное расширение
         // Используем outputSubDir для создания путей
         return path.join('obj', outputSubDir, newObjPath);
     }).filter(Boolean);

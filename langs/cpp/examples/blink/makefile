@@ -20,13 +20,16 @@ PROJECT_DEP_PATH = obj/.d
 PROJECT_SOURCES = $(shell node $(VERTEX_SCRIPTS)/find.js src .cpp)
 PROJECT_OBJECTS = $(shell node $(VERTEX_SCRIPTS)/obj.js $(PROJECT_SOURCES))
 
-VERTEX_SOURCES = $(shell node $(VERTEX_SCRIPTS)/find.js $(VERTEX_INC_PATH) .hpp)
-VERTEX_OBJECTS = $(shell node $(VERTEX_SCRIPTS)/obj-rel.js polaris/ $(VERTEX_SOURCES))
+VERTEX_SOURCES = $(shell node $(VERTEX_SCRIPTS)/find.js $(VERTEX_INC_PATH) .cpp)
+VERTEX_OBJECTS = $(shell node $(VERTEX_SCRIPTS)/obj-rel.js vertex/ $(VERTEX_SOURCES))
 
 POLARIS_SOURCES = $(shell node $(VERTEX_SCRIPTS)/find.js $(VERTEX_INC_PATH) .cpp)
-POLARIS_OBJECTS = $(shell node $(VERTEX_SCRIPTS)/obj-rel.js $(VERTEX_SOURCES))
+POLARIS_OBJECTS = $(shell node $(VERTEX_SCRIPTS)/obj-rel.js polaris/ $(VERTEX_SOURCES))
+
+PLATFORM_SOURCES = $(shell node $(VERTEX_SCRIPTS)/find.js $(PLATFORM_PATH) .cpp)
+PLATFORM_OBJECTS = $(shell node $(VERTEX_SCRIPTS)/obj-plt.js $(PLATFORM_SOURCES))
 
 all: print
 
 print:
-	@echo $(VERTEX_OBJECTS)
+	@echo $(PLATFORM_OBJECTS)

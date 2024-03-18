@@ -56,7 +56,7 @@ using analog = float;
  * @param[in] n GPIO number.
  * @param[in] mode GPIO mode.
 */
-void init(const num n, mode mode);
+extern void init(const num n, mode mode);
 
 
 /** 
@@ -64,7 +64,7 @@ void init(const num n, mode mode);
  * 
  * @param[in] n GPIO number.
 */
-void deinit(const num n);
+extern void deinit(const num n);
 
 /** 
  * @brief Writes ditial value for specific port.
@@ -72,7 +72,7 @@ void deinit(const num n);
  * @param[in] n GPIO number.
  * @param[in] state GPIO state.
 */
-void write(const num n, state state);
+extern void write(const num n, state state);
 
 /** 
  * @brief Writes analog value for specific port.
@@ -80,7 +80,7 @@ void write(const num n, state state);
  * @param[in] n GPIO number.
  * @param[in] value GPIO value. (0 ~ 1)
 */
-void write(const num n, analog value);
+extern void write(const num n, analog value);
 
 /** 
  * @brief Reads digital/analog value for specific port.
@@ -114,7 +114,7 @@ analog read<analog>(num n);
  * 
  * @param[in] n GPIO number.
 */
-void toggle(const num n);
+extern void toggle(const num n);
 
 /** 
  * @brief Multiple functions. To interact with GPIO with structures and arrays.
@@ -157,7 +157,7 @@ typedef struct {
  * @param[in] n number of GPIO pins
  * @param[in] conf array of GPIO configurations
 */
-void init(uint16 n, init_config conf[]);
+extern void init(uint16 n, init_config conf[]);
 
 /** 
  * @brief Writes values for specific ports.
@@ -165,7 +165,7 @@ void init(uint16 n, init_config conf[]);
  * @param[in] n number of GPIO pins
  * @param[in] conf array of GPIO configurations
 */
-void write(uint16 n, write_config conf[]);
+extern void write(uint16 n, write_config conf[]);
 
 /** 
  * @brief Reads values from specific ports.
@@ -173,7 +173,7 @@ void write(uint16 n, write_config conf[]);
  * @param[in] n number of GPIO pins
  * @param[in] conf array of GPIO configurations
 */
-void read(uint16 n, read_config conf[]);
+extern void read(uint16 n, read_config conf[]);
 
 }
 }

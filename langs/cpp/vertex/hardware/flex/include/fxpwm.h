@@ -25,7 +25,28 @@ namespace fx {
 */
 namespace pwm {
 
+/** 
+ * @brief PWM mode. Standard Flex PWM type.
+*/
+enum class mode {
+    FAST, PHASE_CORRECT, PHASE_FREQUENCY_CORRECT,
+    VARIABLE_PHASE_CORRECT, CENTER_ALIGNED,
+    SINGLE_SLOPE, DUAL_SLOPE, DEAD_TIME_INSERTION,
+    COMPLEMENTARY
+};
 
+/** 
+ * @brief PWM channel number type.
+*/
+using num = vx::uint16;
+
+/** 
+ * @brief Inits PWM
+ * 
+ * @param[in] n PWM channel.
+ * @param[in] mode PWM mode.
+*/
+void init(const num n, mode mode);
 
 }
 
