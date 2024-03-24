@@ -46,7 +46,7 @@ enum class state : bool {
 /** 
  * @brief Pin number. Standard Vertex GPIO type.
 */
-using num = vx::uint16;
+using num = unsigned short;
 
 /** 
  * @brief Inits mode for specific port.

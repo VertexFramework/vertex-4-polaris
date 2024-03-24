@@ -38,7 +38,7 @@ enum class mode {
 /** 
  * @brief PWM channel number type.
 */
-using num = vx::uint16;
+using num = unsigned short;
 
 /** 
  * @brief Inits PWM

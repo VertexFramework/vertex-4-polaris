@@ -43,7 +43,7 @@ enum class state : bool {
 /** 
  * @brief Pin number. Standard Vertex GPIO type.
 */
-using num = uint16;
+using num = unsigned short;
 
 /** 
  * @brief Analog value. (0 ~ 1). Standard Vertex GPIO type.
