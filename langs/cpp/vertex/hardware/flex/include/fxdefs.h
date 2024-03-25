@@ -9,5 +9,8 @@
  * @author   Matvey Rybalkin
  ******************************************************************************/
 
+/* Definitions */
+#define FX_UNUSED           __attribute__((unused))
+#define FX_ALWAYS_INLINE    __attribute__((always_inline))
 
 #endif // VERTEX_4_POLARIS_FLEX_HARDWARE_IO_HPP__
