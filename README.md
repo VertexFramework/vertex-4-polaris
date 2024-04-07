@@ -8,6 +8,6 @@
 
 ### Main
 
-* Independent of development environment
-* Every template based on `makefile`
-* Maximum standardization, performance and expressiveness
+* Independent of development environment.
+* Every template based on `makefile`.
+* Maximum standardization, performance and expressiveness.
